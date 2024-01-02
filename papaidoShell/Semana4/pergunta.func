@@ -1,0 +1,15 @@
+#  A função recebe 3 parâmetros na seguinte ordem:
+#  $1 - Mensagem a ser dada na tela
+#  $2 - Valor a ser aceito com resposta default
+#  $3 - O outro valor aceito
+#  Supondo que $1=Aceita?, $2=s e $3=n, a linha
+#  abaixo colocaria em Msg o valor "Aceita? (S/n)"
+Msg="$1 (`echo $2 | tr a-z A-Z`/`echo $3 | tr A-Z a-z`)"
+TamMsg=${#Msg}
+Col=$(((TotCols - TamMsg) / 2))    # Centra msg na linha
+tput cup $LinhaMesg $Col
+read -n1 -p "$Msg " SN
+SN=${SN:-$2}
+# [ ! $SN ] && SN=$2                 # Se vazia coloca default em SN
+SN=$(echo $SN | tr A-Z a-z)        # A saída de SN será em minúscula
+tput cup $LinhaMesg $Col; tput el  # Apaga msg da tela

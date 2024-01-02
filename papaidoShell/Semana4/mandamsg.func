@@ -1,0 +1,10 @@
+# A  função recebe  somente um parâmetro
+# com a  mensagem que  se deseja exibir,
+# para não obrigar ao programador passar
+# a msg  entre aspas, usaremos $* (todos
+# os parâmetros, lembra?) e não $1.
+Msg="$*"
+TamMsg=${#Msg}
+Col=$(((TotCols - TamMsg) / 2))    # Centra msg na linha
+tput cup $LinhaMesg $Col
+read -n1 -p "$Msg "
