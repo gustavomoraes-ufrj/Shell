@@ -1,0 +1,3 @@
+[submodule "sanderVanVugt/bash-scripting"]
+	path = sanderVanVugt/bash-scripting
+	url = https://github.com/sandervanvugt/bash-scripting
