@@ -3,6 +3,8 @@
 echo check for existence of essential variables
 
 : ${HOSTNAME?} ${USER?} 
+echo ${HOSTNAME}
+echo ${USER}
 echo if you see this step 1 worked
 
 ${COW?}
