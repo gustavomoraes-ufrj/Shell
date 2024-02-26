@@ -1,6 +1,0 @@
-#!/bin/bash
-shopt -s extglob
-for i in *
-do
-	echo ${i%%*(.doc|.txt|.pdf)}
-done
