@@ -13,6 +13,8 @@ then
 	exit 4
 fi
 
+
+
 sudo echo apt install -y $@
  
 for s in "$@"
